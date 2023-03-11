@@ -2,8 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TeamExerciseManagementApp"
+             xmlns:views ="clr-namespace:TeamExerciseManagementApp.BoardContentViews"
+             xmlns:viewmodels ="clr-namespace:TeamExerciseManagementApp.ViewModels"
              StartupUri="Views/LoginView.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewmodels:ProfileContentViewModel}">
+            <views:ProfileContentView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CalendarContentViewModel}">
+            <views:CalendarContentView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

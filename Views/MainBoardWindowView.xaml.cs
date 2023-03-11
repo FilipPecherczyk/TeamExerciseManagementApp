@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.ViewModels;
 
 namespace TeamExerciseManagementApp.Views
 {
@@ -22,6 +23,8 @@ namespace TeamExerciseManagementApp.Views
         public MainBoardWindowView()
         {
             InitializeComponent();
+
+            DataContext = new MainViewModel();
         }
 
         private void CloseApp_btn_Click(object sender, RoutedEventArgs e)

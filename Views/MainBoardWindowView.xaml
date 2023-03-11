@@ -85,6 +85,7 @@
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Right">
 
+                        <!--Profile functions button-->
                         <Button  
                         x:Name="ProfileFunctions_btn"
                         Background="Transparent"
@@ -93,8 +94,30 @@
                         Margin="0 0 5 0">
                             <Image Source="\Images\user_icon_blue.png"
                                    Height="25"/>
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                         </Button>
 
+                        <!--Minimize app button-->
                         <Button  
                         x:Name="MinimizeApp_btn"
                         Click="MinimizeApp_btn_Click"
@@ -104,8 +127,30 @@
                         Margin="0 0 5 0">
                             <Image Source="\Images\minimizeIcon.png"
                                    Height="25"/>
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                         </Button>
 
+                        <!--Close app button-->
                         <Button  
                         x:Name="CloseApp_btn"
                         Click="CloseApp_btn_Click"
@@ -115,6 +160,27 @@
                         Margin="0 0 10 0">
                             <Image Source="\Images\closeAppIcon.png"
                                    Height="25"/>
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                         </Button>
 
                     </StackPanel>

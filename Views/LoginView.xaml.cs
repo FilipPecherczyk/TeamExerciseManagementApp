@@ -48,5 +48,10 @@ namespace TeamExerciseManagementApp.Views
             var newWindow = new MainBoardWindowView();
             newWindow.Show();
         }
+
+        private void Register_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
