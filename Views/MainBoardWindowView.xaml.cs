@@ -15,13 +15,23 @@ using System.Windows.Shapes;
 namespace TeamExerciseManagementApp.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for MainBoardWindowView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class MainBoardWindowView : Window
     {
-        public LoginView()
+        public MainBoardWindowView()
         {
             InitializeComponent();
+        }
+
+        private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MinimizeApp_btn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -30,23 +40,6 @@ namespace TeamExerciseManagementApp.Views
             {
                 DragMove();
             }
-        }
-
-        private void MinimizeApp_btn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void Login_btn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-            var newWindow = new MainBoardWindowView();
-            newWindow.Show();
         }
     }
 }

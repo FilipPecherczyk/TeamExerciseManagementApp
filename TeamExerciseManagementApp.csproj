@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\BoardViews\**" />
+    <EmbeddedResource Remove="Views\BoardViews\**" />
+    <None Remove="Views\BoardViews\**" />
+    <Page Remove="Views\BoardViews\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\backImage.jpg" />
     <None Remove="Images\closeAppIcon.png" />
     <None Remove="Images\key.png" />
@@ -21,7 +28,6 @@
     <Folder Include="Models\" />
     <Folder Include="Commands\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\BoardViews\" />
   </ItemGroup>
 
   <ItemGroup>

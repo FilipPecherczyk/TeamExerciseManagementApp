@@ -1,0 +1,139 @@
+﻿<Window x:Class="TeamExerciseManagementApp.Views.MainBoardWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamExerciseManagementApp.Views"
+        mc:Ignorable="d"
+        Title="MainBoardWindowView"
+        WindowStartupLocation="CenterScreen"
+        Height="700" Width="1000"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Border 
+            CornerRadius="20"
+            BorderThickness="5">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.85"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Navigation menu-->
+                <ColumnDefinition Width="270"/>
+                <!--Content section-->
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Navigation menu-->
+            <Border Grid.Column="0" 
+                    CornerRadius="15 0 0 15"
+                    Background="#060531">
+
+                <StackPanel>
+                    <!--Logo Panel-->
+                    <StackPanel Orientation="Horizontal"
+                                Height="65"
+                                Margin="15 25 0 50">
+                        <Image Source="/Images/logo-icon.png"/>
+
+                        <TextBlock Text="TEMA"
+                                   Foreground="White"
+                                   FontSize="50"
+                                   FontFamily="Montserrat"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"
+                                   Margin="20 15 0 10"/>
+                    </StackPanel>
+
+                    <!--Manu Buttons-->
+                    <StackPanel>
+                        <Button x:Name="ProfileContent_btn"
+                                Content="Profil"
+                                Margin="5 0 5 25"
+                                Command="{Binding UpdateViewCommand}" CommandParameter="ProfileContent"/>
+
+                        <Button x:Name="TreningCalendar_btn"
+                                Content="Kalendarz"
+                                Margin="5 0 5 25"
+                                Command="{Binding UpdateViewCommand}" CommandParameter="TreningCalendar"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+            <!--Content section-->
+            <Border Grid.Column="1" 
+                    CornerRadius="0 15 15 0"
+                    Background="#1B1448">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Top section-->
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right">
+
+                        <Button  
+                        x:Name="ProfileFunctions_btn"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Cursor="Hand"
+                        Margin="0 0 5 0">
+                            <Image Source="\Images\user_icon_blue.png"
+                                   Height="25"/>
+                        </Button>
+
+                        <Button  
+                        x:Name="MinimizeApp_btn"
+                        Click="MinimizeApp_btn_Click"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Cursor="Hand"
+                        Margin="0 0 5 0">
+                            <Image Source="\Images\minimizeIcon.png"
+                                   Height="25"/>
+                        </Button>
+
+                        <Button  
+                        x:Name="CloseApp_btn"
+                        Click="CloseApp_btn_Click"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Cursor="Hand"
+                        Margin="0 0 10 0">
+                            <Image Source="\Images\closeAppIcon.png"
+                                   Height="25"/>
+                        </Button>
+
+                    </StackPanel>
+
+                    <!--Content-->
+                    <ContentControl
+                        Grid.Row="1"
+                        Content="{Binding SelectedViewModel}"
+                        Margin="15">
+
+
+
+                    </ContentControl>
+
+                </Grid>
+
+            </Border>
+        </Grid>
+
+
+    </Border>
+</Window>
