@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\backImage.jpg" />
+    <None Remove="Images\closeAppIcon.png" />
+    <None Remove="Images\key.png" />
+    <None Remove="Images\logo-icon.png" />
+    <None Remove="Images\minimizeIcon.png" />
+    <None Remove="Images\user.png" />
+    <None Remove="Images\user_icon_blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Commands\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\BoardViews\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\backImage.jpg" />
+    <Resource Include="Images\closeAppIcon.png" />
+    <Resource Include="Images\key.png" />
+    <Resource Include="Images\logo-icon.png" />
+    <Resource Include="Images\minimizeIcon.png" />
+    <Resource Include="Images\user.png" />
+    <Resource Include="Images\user_icon_blue.png" />
+  </ItemGroup>
+
+</Project>
