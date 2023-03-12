@@ -6,12 +6,22 @@
              xmlns:viewmodels ="clr-namespace:TeamExerciseManagementApp.ViewModels"
              StartupUri="Views/LoginView.xaml">
     <Application.Resources>
+
         <DataTemplate DataType="{x:Type viewmodels:ProfileContentViewModel}">
             <views:ProfileContentView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:ReslutsContentViewModel}">
+            <views:ResultsContentView/>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewmodels:CalendarContentViewModel}">
             <views:CalendarContentView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:GroupResultsContentViewModel}">
+            <views:GroupResultsContentView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

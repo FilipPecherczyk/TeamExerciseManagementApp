@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TeamExerciseManagementApp.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for RegistrationWindowView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class RegistrationWindowView : Window
     {
-        public LoginView()
+        public RegistrationWindowView()
         {
             InitializeComponent();
         }
@@ -32,27 +32,19 @@ namespace TeamExerciseManagementApp.Views
             }
         }
 
+        private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void MinimizeApp_btn_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
+        private void SubmitRegistration_btn_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-        }
 
-        private void Login_btn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-            var newWindow = new MainBoardWindowView();
-            newWindow.Show();
-        }
-
-        private void Register_btn_Click(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new RegistrationWindowView();
-            newWindow.Show();
         }
     }
 }

@@ -26,13 +26,20 @@ namespace TeamExerciseManagementApp.Commands
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString() == "ProfileContent")
+            switch (parameter.ToString())
             {
-                _viewModel.SelectedViewModel = new ProfileContentViewModel();
-            }
-            else if (parameter.ToString() == "TreningCalendar")
-            {
-                _viewModel.SelectedViewModel = new CalendarContentViewModel();
+                case "ProfileContent":
+                    _viewModel.SelectedViewModel = new ProfileContentViewModel();
+                    break;
+                case "TreningCalendar":
+                    _viewModel.SelectedViewModel = new CalendarContentViewModel();
+                    break;
+                case "Results":
+                    _viewModel.SelectedViewModel = new ReslutsContentViewModel();
+                    break;
+                case "GroupResults":
+                    _viewModel.SelectedViewModel = new GroupResultsContentViewModel();
+                    break;
             }
         }
     }

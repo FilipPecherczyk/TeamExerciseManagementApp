@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -25,6 +27,7 @@ namespace TeamExerciseManagementApp.Views
             InitializeComponent();
 
             DataContext = new MainViewModel();
+            SetBoardContent();
         }
 
         private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
@@ -43,6 +46,16 @@ namespace TeamExerciseManagementApp.Views
             {
                 DragMove();
             }
+        }
+
+        /// <summary>
+        /// Simulate button click to display profile content
+        /// </summary>
+        private void SetBoardContent()
+        {
+            ButtonAutomationPeer peer = new ButtonAutomationPeer(ProfileContent_btn);
+            IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+            invokeProv.Invoke();
         }
     }
 }

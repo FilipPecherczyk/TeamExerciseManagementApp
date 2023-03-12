@@ -253,7 +253,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Width="120"
-                            Margin="60 10 0 20"
+                            Margin="140 20 0 20"
                             Click="Register_btn_Click">
 
                         <Button.Style>

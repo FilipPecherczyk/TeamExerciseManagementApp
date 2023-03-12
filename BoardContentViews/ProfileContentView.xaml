@@ -5,8 +5,81 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TeamExerciseManagementApp.BoardContentViews"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="700"
+             Background="#1B1448"
+             FontFamily="Montserrat">
     <Grid>
-        <TextBlock Text="PROFILE" FontSize="50" Foreground="Pink"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Left site-->
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
+            
+            <!--Lastname-->
+            <TextBlock x:Name="UserLastname"
+                       Text="Kowalski"
+                       Foreground="White"
+                       FontSize="65"
+                       FontWeight="SemiBold"
+                       Margin="30 30 20 1"/>
+
+            <!--Name-->
+            <TextBlock x:Name="UserName"
+                       Text="Jan"
+                       Foreground="White"
+                       FontSize="60"
+                       FontWeight="SemiBold"
+                       Margin="30 -10 20 5"/>
+
+            <!--Team name-->
+            <TextBlock x:Name="UserTeam"
+                       Text="AZS PWSZ STAL NYSA"
+                       Foreground="White"
+                       FontSize="30"
+                       FontWeight="Light"
+                       Margin="30 3 20 0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock x:Name="UserBirthday"
+                       Text="17.05.2001r."
+                       Foreground="White"
+                       FontSize="35"
+                       FontWeight="Medium"
+                       Margin="30 30 20 0"/>
+
+            <TextBlock x:Name="UserHeight"
+                       Text="183cm"
+                       Foreground="White"
+                       FontSize="35"
+                       FontWeight="Medium"
+                       Margin="30 10 20 0"/>
+
+            <TextBlock x:Name="UserWeight"
+                       Text="75kg"
+                       Foreground="White"
+                       FontSize="35"
+                       FontWeight="Medium"
+                       Margin="30 10 20 0"/>
+        </StackPanel>
+
+        
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <!--Player / Coach-->
+            <TextBlock x:Name="UserCategory"
+                       Text="Zawodnik"
+                       Foreground="White"
+                       FontSize="50"
+                       FontWeight="Medium"
+                       Margin="80 200 20 0"/>
+        </StackPanel>
     </Grid>
 </UserControl>

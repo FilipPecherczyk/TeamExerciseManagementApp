@@ -1,12 +1,14 @@
-﻿<UserControl x:Class="TeamExerciseManagementApp.BoardContentViews.CalendarContentView"
+﻿<UserControl x:Class="TeamExerciseManagementApp.BoardContentViews.GroupResultsContentView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TeamExerciseManagementApp.BoardContentViews"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="700"
+             Background="#1B1448"
+             FontFamily="Montserrat">
     <Grid>
-        <TextBlock Text="COMING SOON..." FontSize="50" Foreground="Pink" Margin="100"/>
+        <TextBlock Text="COMING SOON" FontSize="50" Foreground="Yellow" Margin="100"/>
     </Grid>
 </UserControl>

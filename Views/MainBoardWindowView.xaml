@@ -55,17 +55,153 @@
 
                     <!--Manu Buttons-->
                     <StackPanel>
+
+                        <!--Profile button-->
                         <Button x:Name="ProfileContent_btn"
                                 Content="Profil"
-                                Margin="5 0 5 25"
-                                Command="{Binding UpdateViewCommand}" CommandParameter="ProfileContent"/>
+                                Command="{Binding UpdateViewCommand}" CommandParameter="ProfileContent"
+                                Margin="5 45 5 20"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                FontSize="30"
+                                FontWeight="Bold"
+                                FontFamily="Montserrat">
 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#0080ff"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#66b3ff"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="220" Height="40"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <!--Results button-->
+                        <Button x:Name="Results_btn"
+                                Content="Wyniki"
+                                Command="{Binding UpdateViewCommand}" CommandParameter="Results"
+                                Margin="5 20"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                FontSize="30"
+                                FontWeight="Bold"
+                                FontFamily="Montserrat">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#0080ff"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#66b3ff"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="220" Height="40"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                        <!--Calendar button-->
                         <Button x:Name="TreningCalendar_btn"
                                 Content="Kalendarz"
-                                Margin="5 0 5 25"
-                                Command="{Binding UpdateViewCommand}" CommandParameter="TreningCalendar"/>
+                                Command="{Binding UpdateViewCommand}" CommandParameter="TreningCalendar"
+                                Margin="5 20"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                FontSize="30"
+                                FontWeight="Bold"
+                                FontFamily="Montserrat">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#0080ff"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#66b3ff"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="220" Height="40"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+
+                        </Button>
+
                     </StackPanel>
 
+                    <!--COACH Panel-->
+                    <StackPanel>
+                        
+                        <!--Group results button, ONLY FOR COACH-->
+                        <Button x:Name="GroupResults_btn"
+                                Content="Wyniki grupy"
+                                Command="{Binding UpdateViewCommand}" CommandParameter="GroupResults"
+                                Margin="5 20"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                FontSize="30"
+                                FontWeight="Bold"
+                                FontFamily="Montserrat">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#FFAC1C"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FAC898"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="220" Height="40"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        
+                        
+                    </StackPanel>
+                    
                 </StackPanel>
             </Border>
 
