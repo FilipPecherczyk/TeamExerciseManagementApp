@@ -25,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Images\backImage.jpg" />
     <Resource Include="Images\closeAppIcon.png" />
     <Resource Include="Images\key.png" />
@@ -36,6 +32,10 @@
     <Resource Include="Images\minimizeIcon.png" />
     <Resource Include="Images\user.png" />
     <Resource Include="Images\user_icon_blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

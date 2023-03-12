@@ -173,32 +173,34 @@
 
                     </StackPanel>
 
-                    <!--#2 Password-->
+                    <!--Chose User Category-->
                     <StackPanel Orientation="Horizontal"
                                 Margin="0 20">
 
-                        <Image Source="\Images\key.png"
-                               Height="30"/>
+                        <RadioButton x:Name="Player_RadioBtn" 
+                                     Content="Zawodnik"
+                                     Foreground="White"
+                                     FontWeight="Medium"
+                                     Margin="10">
+                            <RadioButton.LayoutTransform>
+                                <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            </RadioButton.LayoutTransform>
+                        </RadioButton>
 
-                        <PasswordBox
-                             x:Name="User2ndPasswordToRegistry_txt"
-                             FontSize="25"
-                             FontWeight="Normal"
-                             FontFamily="Montserrat"
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             Background="Transparent"
-                             BorderThickness="0 0 0 2"
-                             Height="30"
-                             VerticalContentAlignment="Center"
-                             Margin="10 0"
-                            Width="250">
-                        </PasswordBox>
+                        <RadioButton x:Name="Coach_RadioBtn" 
+                                     Content="Trener"
+                                     Foreground="White"
+                                     FontWeight="Medium"
+                                     Margin="10">
+                            <RadioButton.LayoutTransform>
+                                <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            </RadioButton.LayoutTransform>
+                        </RadioButton>
 
                     </StackPanel>
 
 
+                    <!--Button and Login Error sector-->
                     <StackPanel Orientation="Horizontal">
 
                         <TextBlock Text="Źle"
@@ -240,8 +242,8 @@
                             </Button.Template>
                         </Button>
                     </StackPanel>
-                    
 
+                    
                     
                 </StackPanel>
             </Border>
