@@ -14,7 +14,7 @@ namespace TeamExerciseManagementApp.Models.UserEntities
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=EF_nauka");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=TeamDataBase");
         }
     }
 }

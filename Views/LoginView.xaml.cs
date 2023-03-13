@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.Views
 {
@@ -44,9 +45,18 @@ namespace TeamExerciseManagementApp.Views
 
         private void Login_btn_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-            var newWindow = new MainBoardWindowView();
-            newWindow.Show();
+            if (UserLogin.CanUserBeLogged("Jan","haslo123"))
+            {
+                MessageBox.Show("Poszło");
+                //this.Visibility = Visibility.Hidden;
+                //var newWindow = new MainBoardWindowView();
+                //newWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Gówno");
+            }
+
         }
 
         private void Register_btn_Click(object sender, RoutedEventArgs e)

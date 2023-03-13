@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace TeamExerciseManagementApp.Models.UserEntities
 {
-    [Table("PlayerResults")]
+    [Table("Results")]
     public class PlayerResults
     {
         [Key]

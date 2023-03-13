@@ -9,6 +9,7 @@ using TeamExerciseManagementApp.Enums;
 
 namespace TeamExerciseManagementApp.Models.UserEntities
 {
+    [Table("Users")]
     public class User
     {
         [Key]
@@ -26,5 +27,7 @@ namespace TeamExerciseManagementApp.Models.UserEntities
         public string Login { get; set; }
         [Required]
         public string Password { get; set; }
+
+        public PlayerResults Results_ID { get; set; }
     }
 }
