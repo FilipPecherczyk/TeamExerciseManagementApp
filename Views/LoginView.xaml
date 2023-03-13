@@ -12,8 +12,8 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
-    
-    
+
+
     <Border CornerRadius="55">
 
         <Border.Background>
@@ -278,6 +278,12 @@
                         </Button.Template>
 
                     </Button>
+                    <TextBlock Text="Błędny login bądź hasło"
+                               x:Name="WrongLogingOrPassword_textBlock"
+                               Foreground="Red"
+                               FontSize="18"
+                               FontWeight="Medium"
+                               Visibility="Hidden"/>
 
                 </StackPanel>
             </Grid>

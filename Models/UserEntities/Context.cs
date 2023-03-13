@@ -9,8 +9,8 @@ namespace TeamExerciseManagementApp.Models.UserEntities
 {
     public class Context : DbContext
     {
-        DbSet<User> Users { get; set; }
-        DbSet<PlayerResults> PlayerResults { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<PlayerResults> PlayerResults { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

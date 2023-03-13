@@ -45,16 +45,18 @@ namespace TeamExerciseManagementApp.Views
 
         private void Login_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (UserLogin.CanUserBeLogged("Jan","haslo123"))
+            var login = UserName_txt.Text;
+            var password = UserPassword_txt.Password;
+            if (UserLogin.CanUserBeLogged(login,password))
             {
-                MessageBox.Show("Poszło");
-                //this.Visibility = Visibility.Hidden;
-                //var newWindow = new MainBoardWindowView();
-                //newWindow.Show();
+                this.Visibility = Visibility.Hidden;
+                var newWindow = new MainBoardWindowView();
+                newWindow.Show();
             }
             else
             {
-                MessageBox.Show("Gówno");
+                Login_btn.Background = Brushes.Red;
+                WrongLogingOrPassword_textBlock.Visibility = Visibility.Visible;
             }
 
         }
