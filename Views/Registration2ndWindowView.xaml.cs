@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.Views
 {
@@ -23,6 +24,29 @@ namespace TeamExerciseManagementApp.Views
         public Registration2ndWindowView()
         {
             InitializeComponent();
+            _CanRegistryFlag = false;
+        }
+
+        private bool _CanRegistryFlag = false;
+        private void UserRegistration_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (UserNameToRegistry_txt.Text.Length > 0 && UserLastnameToRegistry_txt.Text.Length > 0)
+            {
+                UserRegistrationToDataBase.UserToRegistration.FirstName = UserNameToRegistry_txt.Text;
+                UserRegistrationToDataBase.UserToRegistration.LastName = UserLastnameToRegistry_txt.Text;
+                UserRegistrationToDataBase.UserToRegistration.Birthday = UserDateToRegistry.SelectedDate.Value;
+                var s = UserDateToRegistry.SelectedDate.Value;
+
+                UserRegistrationToDataBase.UserRegistration();
+                MessageBox.Show("JUPI");
+            }
+            else
+            {
+                MessageBox.Show("Bee");
+            }
+
+
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,10 +67,8 @@ namespace TeamExerciseManagementApp.Views
             WindowState = WindowState.Minimized;
         }
 
-        private void UserRegistration_btn_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+
 
         private void BackToFirstPage_btn_Click(object sender, RoutedEventArgs e)
         {

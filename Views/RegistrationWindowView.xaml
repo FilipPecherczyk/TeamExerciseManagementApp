@@ -177,25 +177,12 @@
                     <StackPanel Orientation="Horizontal"
                                 Margin="0 20">
 
-                        <RadioButton x:Name="Player_RadioBtn" 
-                                     Content="Zawodnik"
-                                     Foreground="White"
-                                     FontWeight="Medium"
-                                     Margin="10">
-                            <RadioButton.LayoutTransform>
+                        <ComboBox x:Name="UserCategories_ComboBox"
+                                  Width="150">
+                            <ComboBox.LayoutTransform>
                                 <ScaleTransform ScaleX="2" ScaleY="2"/>
-                            </RadioButton.LayoutTransform>
-                        </RadioButton>
-
-                        <RadioButton x:Name="Coach_RadioBtn" 
-                                     Content="Trener"
-                                     Foreground="White"
-                                     FontWeight="Medium"
-                                     Margin="10">
-                            <RadioButton.LayoutTransform>
-                                <ScaleTransform ScaleX="2" ScaleY="2"/>
-                            </RadioButton.LayoutTransform>
-                        </RadioButton>
+                            </ComboBox.LayoutTransform>
+                        </ComboBox>
 
                     </StackPanel>
 

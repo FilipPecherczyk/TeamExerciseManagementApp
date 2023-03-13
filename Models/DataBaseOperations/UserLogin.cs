@@ -12,8 +12,7 @@ namespace TeamExerciseManagementApp.Models.DataBaseOperations
 {
     public static class UserLogin
     {
-
-        public static int LogedUserID { get; set; }
+        public static User LogedUser { get; set; }
 
         public static bool CanUserBeLogged(string userLogin, string userPassword)
         {
@@ -30,7 +29,30 @@ namespace TeamExerciseManagementApp.Models.DataBaseOperations
             {
                 var dbContext = new Context();
                 var user = dbContext.Users.Where(u => u.Login == userLogin).ToList();
-                LogedUserID = user[0].User_ID;
+
+                var userHelper = new User
+                {
+                    User_ID = user[0].User_ID,
+                    FirstName = user[0].FirstName,
+                    LastName = user[0].LastName,
+                    UserCategory = user[0].UserCategory,
+                    Birthday = user[0].Birthday,
+                    Login = user[0].Login,
+                    Password = user[0].Password,
+                    Results_ID = user[0].Results_ID
+                    //Results_ID = new PlayerResults
+                    //{
+                    //    Results_ID = user[0].Results_ID.Results_ID,
+                    //    Weight = user[0].Results_ID.Weight,
+                    //    Height = user[0].Results_ID.Height,
+                    //    BenchPress = user[0].Results_ID.BenchPress,
+                    //    Squats = user[0].Results_ID.Squats,
+                    //    Deadlift = user[0].Results_ID.Deadlift,
+                    //    Run60 = user[0].Results_ID.Run60,
+                    //    Jump = user[0].Results_ID.Jump
+                    //}
+                };
+                LogedUser = userHelper;
                 return true;
             }
             else

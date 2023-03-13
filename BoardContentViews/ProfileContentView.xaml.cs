@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.BoardContentViews
 {
@@ -23,6 +24,13 @@ namespace TeamExerciseManagementApp.BoardContentViews
         public ProfileContentView()
         {
             InitializeComponent();
+
+            UserLastname.Text = UserLogin.LogedUser.LastName;
+            UserName.Text = UserLogin.LogedUser.FirstName;
+            //UserHeight.Text = UserLogin.LogedUser.Results_ID.Height.ToString();
+            //UserWeight.Text = UserLogin.LogedUser.Results_ID.Weight.ToString();
+            UserBirthday.Text = UserLogin.LogedUser.Birthday.ToString();
+            UserCategory.Text = UserLogin.LogedUser.UserCategory.ToString();
         }
     }
 }

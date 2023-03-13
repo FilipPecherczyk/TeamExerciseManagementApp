@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Enums;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.Views
 {
@@ -23,6 +25,9 @@ namespace TeamExerciseManagementApp.Views
         public RegistrationWindowView()
         {
             InitializeComponent();
+
+            _CanGoToNextRegistryPageFlag = false;
+            UserCategories_ComboBox.ItemsSource = Enum.GetValues(typeof(UserCategories));
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -44,11 +49,39 @@ namespace TeamExerciseManagementApp.Views
         }
 
 
+        private bool _CanGoToNextRegistryPageFlag = false;
         private void NextRegistrationPage_btn_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-            var newWindow = new Registration2ndWindowView();
-            newWindow.Show();
+            //Check if all of functions are field
+            if (UserLoginToRegistry_txt.Text.Length > 0 && User1stPasswordToRegistry_txt.Password.Length > 0
+                && (UserCategories_ComboBox.SelectedIndex == 0 || UserCategories_ComboBox.SelectedIndex == 1))
+            {
+                _CanGoToNextRegistryPageFlag = true;
+            }
+
+
+            if (_CanGoToNextRegistryPageFlag)
+            {
+                UserRegistrationToDataBase.UserToRegistration.Login = UserLoginToRegistry_txt.Text;
+                UserRegistrationToDataBase.UserToRegistration.Password = User1stPasswordToRegistry_txt.Password;
+                if (UserCategories_ComboBox.SelectedItem.ToString() == "Player")
+                {
+                    UserRegistrationToDataBase.UserToRegistration.UserCategory = UserCategories.Player;
+                }
+                if (UserCategories_ComboBox.SelectedItem.ToString() == "Coach")
+                {
+                    UserRegistrationToDataBase.UserToRegistration.UserCategory = UserCategories.Coach;
+                }
+                this.Visibility = Visibility.Hidden;
+                var newWindow = new Registration2ndWindowView();
+                newWindow.Show();
+            }
+            else
+            {
+                WrongUserRegistration_text.Visibility = Visibility.Visible;
+            }
+
         }
+
     }
 }

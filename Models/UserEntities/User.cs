@@ -29,5 +29,6 @@ namespace TeamExerciseManagementApp.Models.UserEntities
         public string Password { get; set; }
 
         public PlayerResults Results_ID { get; set; }
+
     }
 }

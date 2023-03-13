@@ -23,7 +23,7 @@
             
             <!--Lastname-->
             <TextBlock x:Name="UserLastname"
-                       Text="Kowalski"
+                       Text="LastName"
                        Foreground="White"
                        FontSize="65"
                        FontWeight="SemiBold"
@@ -31,7 +31,7 @@
 
             <!--Name-->
             <TextBlock x:Name="UserName"
-                       Text="Jan"
+                       Text="Name"
                        Foreground="White"
                        FontSize="60"
                        FontWeight="SemiBold"
@@ -39,7 +39,7 @@
 
             <!--Team name-->
             <TextBlock x:Name="UserTeam"
-                       Text="AZS PWSZ STAL NYSA"
+                       Text="FC Real Londyn"
                        Foreground="White"
                        FontSize="30"
                        FontWeight="Light"
@@ -49,21 +49,21 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock x:Name="UserBirthday"
-                       Text="17.05.2001r."
+                       Text="Birthday"
                        Foreground="White"
                        FontSize="35"
                        FontWeight="Medium"
-                       Margin="30 30 20 0"/>
+                       Margin="30 30 150 0"/>
 
             <TextBlock x:Name="UserHeight"
-                       Text="183cm"
+                       Text="182cm"
                        Foreground="White"
                        FontSize="35"
                        FontWeight="Medium"
                        Margin="30 10 20 0"/>
 
             <TextBlock x:Name="UserWeight"
-                       Text="75kg"
+                       Text="72kg"
                        Foreground="White"
                        FontSize="35"
                        FontWeight="Medium"
@@ -75,11 +75,11 @@
         <StackPanel Grid.Row="1" Grid.Column="1">
             <!--Player / Coach-->
             <TextBlock x:Name="UserCategory"
-                       Text="Zawodnik"
+                       Text="Category"
                        Foreground="White"
                        FontSize="50"
                        FontWeight="Medium"
-                       Margin="80 200 20 0"/>
+                       Margin="90 200 20 0" Width="329"/>
         </StackPanel>
     </Grid>
 </UserControl>
