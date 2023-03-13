@@ -131,7 +131,7 @@
                                Height="30"/>
 
                         <TextBox
-                             x:Name="UserNameToRegistry_txt"
+                             x:Name="UserLoginToRegistry_txt"
                              FontSize="25"
                              FontWeight="Normal"
                              FontFamily="Montserrat"
@@ -209,14 +209,14 @@
                                    Foreground="Red"
                                    Visibility="Hidden"/>
                         
-                        <Button Content="ZAREJESTRUJ"
-                            x:Name="SubmitRegistration_btn"
+                        <Button Content="Dalej"
+                            x:Name="NextRegistrationPage_btn"
                             Foreground="White"
                             FontSize="20"
                             FontWeight="DemiBold"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Click="SubmitRegistration_btn_Click"
+                            Click="NextRegistrationPage_btn_Click"
                             Margin="140 25 0 0">
 
                             <Button.Style>

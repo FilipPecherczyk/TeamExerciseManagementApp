@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TeamExerciseManagementApp.Views
@@ -42,9 +43,12 @@ namespace TeamExerciseManagementApp.Views
             WindowState = WindowState.Minimized;
         }
 
-        private void SubmitRegistration_btn_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void NextRegistrationPage_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            var newWindow = new Registration2ndWindowView();
+            newWindow.Show();
         }
     }
 }
