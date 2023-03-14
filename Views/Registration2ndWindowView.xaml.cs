@@ -30,23 +30,25 @@ namespace TeamExerciseManagementApp.Views
         private bool _CanRegistryFlag = false;
         private void UserRegistration_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (UserNameToRegistry_txt.Text.Length > 0 && UserLastnameToRegistry_txt.Text.Length > 0)
+
+            if (UserNameToRegistry_txt.Text.Length > 0 && UserLastnameToRegistry_txt.Text.Length > 0
+                && UserHeightToRegistry_txt.Text.Length > 0 && UserWeightToRegistry_txt.Text.Length > 0)
             {
                 UserRegistrationToDataBase.UserToRegistration.FirstName = UserNameToRegistry_txt.Text;
                 UserRegistrationToDataBase.UserToRegistration.LastName = UserLastnameToRegistry_txt.Text;
                 UserRegistrationToDataBase.UserToRegistration.Birthday = UserDateToRegistry.SelectedDate.Value;
+                UserRegistrationToDataBase.UserToRegistration.Results_ID.Height = int.Parse(UserHeightToRegistry_txt.Text);
+                UserRegistrationToDataBase.UserToRegistration.Results_ID.Weight = int.Parse(UserWeightToRegistry_txt.Text);
+
                 var s = UserDateToRegistry.SelectedDate.Value;
 
                 UserRegistrationToDataBase.UserRegistration();
-                MessageBox.Show("JUPI");
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Bee");
+                UserRegistration_btn.Background = Brushes.Red;
             }
-
-
-
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

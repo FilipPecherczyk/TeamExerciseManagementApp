@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.BoardContentViews
 {
@@ -23,6 +24,7 @@ namespace TeamExerciseManagementApp.BoardContentViews
         public GroupResultsContentView()
         {
             InitializeComponent();
+            ListOfUsers.CreateListOfPlayers();
         }
     }
 }

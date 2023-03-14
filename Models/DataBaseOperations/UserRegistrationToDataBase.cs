@@ -9,6 +9,20 @@ namespace TeamExerciseManagementApp.Models.DataBaseOperations
 {
     public static class UserRegistrationToDataBase
     {
+
+        public static bool IsInDataBaseAlreadyThatUser(string login)
+        {
+            var dbContext = new Context();
+            var user = dbContext.Users.Where(u => u.Login == login).ToList();
+
+            if (user.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+         
         public static User UserToRegistration = new User()
         {
             FirstName = "Jan",

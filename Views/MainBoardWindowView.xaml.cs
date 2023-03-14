@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 using TeamExerciseManagementApp.ViewModels;
 
 namespace TeamExerciseManagementApp.Views
@@ -28,6 +29,11 @@ namespace TeamExerciseManagementApp.Views
 
             DataContext = new MainViewModel();
             SetBoardContent();
+
+            if (!IsUserCoach())
+            {
+                GroupResults_btn.Visibility = Visibility.Hidden;
+            }
         }
 
         private void CloseApp_btn_Click(object sender, RoutedEventArgs e)
@@ -56,6 +62,16 @@ namespace TeamExerciseManagementApp.Views
             ButtonAutomationPeer peer = new ButtonAutomationPeer(ProfileContent_btn);
             IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
             invokeProv.Invoke();
+        }
+
+        private bool IsUserCoach()
+        {
+            if (UserLogin.LogedUser.UserCategory == Enums.UserCategories.Coach)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
