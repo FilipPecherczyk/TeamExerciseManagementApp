@@ -52,6 +52,7 @@ namespace TeamExerciseManagementApp.Views
         private bool _CanGoToNextRegistryPageFlag = false;
         private void NextRegistrationPage_btn_Click(object sender, RoutedEventArgs e)
         {
+            // Checking if user with entered login already exists in db
             if (UserRegistrationToDataBase.IsInDataBaseAlreadyThatUser(UserLoginToRegistry_txt.Text))
             {
                 WrongUserRegistration_text.Visibility = Visibility.Visible;

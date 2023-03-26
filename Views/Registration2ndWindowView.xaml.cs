@@ -70,8 +70,6 @@ namespace TeamExerciseManagementApp.Views
         }
 
 
-
-
         private void BackToFirstPage_btn_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;

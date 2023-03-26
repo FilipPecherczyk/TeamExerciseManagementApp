@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeamExerciseManagementApp.Models.DataBaseOperations;
+using TeamExerciseManagementApp.Models.UserEntities;
 
 namespace TeamExerciseManagementApp.BoardContentViews
 {
@@ -62,6 +63,8 @@ namespace TeamExerciseManagementApp.BoardContentViews
         //Dopisać aktualizacje bazy danych
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
+            UpdateUserResults();
+
             Chest_kg.IsReadOnly = true;
             Squat_kg.IsReadOnly = true;
             Deadlift_kg.IsReadOnly = true;
@@ -80,6 +83,20 @@ namespace TeamExerciseManagementApp.BoardContentViews
             Jump_meters.IsReadOnly = false;
 
             Save_btn.Visibility = Visibility.Visible;
+        }
+
+        private void UpdateUserResults()
+        {
+            var myContext = new Context();
+            var logedUserResults = myContext.PlayerResults.FirstOrDefault(uPR => uPR.Results_ID == UserLogin.LogedUser.User_ID);
+
+            logedUserResults.BenchPress = int.Parse(Chest_kg.Text);
+            logedUserResults.Squats = int.Parse(Squat_kg.Text);
+            logedUserResults.Deadlift = int.Parse(Deadlift_kg.Text);
+            logedUserResults.Run60 = int.Parse(Run_time.Text);
+            logedUserResults.Jump = int.Parse(Jump_meters.Text);
+
+            myContext.SaveChanges();
         }
     }
 }

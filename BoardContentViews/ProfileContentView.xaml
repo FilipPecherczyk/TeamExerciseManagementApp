@@ -53,7 +53,7 @@
                        Foreground="White"
                        FontSize="35"
                        FontWeight="Medium"
-                       Margin="30 30 150 0" Width="178"/>
+                       Margin="30 30 20 0"/>
 
             <TextBlock x:Name="UserHeight"
                        Text="182cm"
