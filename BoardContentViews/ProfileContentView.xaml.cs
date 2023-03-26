@@ -27,9 +27,9 @@ namespace TeamExerciseManagementApp.BoardContentViews
 
             UserLastname.Text = UserLogin.LogedUser.LastName;
             UserName.Text = UserLogin.LogedUser.FirstName;
-            //UserHeight.Text = UserLogin.LogedUser.Results_ID.Height.ToString();
-            //UserWeight.Text = UserLogin.LogedUser.Results_ID.Weight.ToString();
-            UserBirthday.Text = UserLogin.LogedUser.Birthday.ToString();
+            UserHeight.Text = UserLogin.LogedUser.Results_ID.Height.ToString() + "cm";
+            UserWeight.Text = UserLogin.LogedUser.Results_ID.Weight.ToString() + "kg";
+            UserBirthday.Text = UserLogin.LogedUser.Birthday.ToString() + "r.";
             UserCategory.Text = UserLogin.LogedUser.UserCategory.ToString();
         }
     }

@@ -29,30 +29,34 @@ namespace TeamExerciseManagementApp.Models.DataBaseOperations
             {
                 var dbContext = new Context();
                 var user = dbContext.Users.Where(u => u.Login == userLogin).ToList();
+                var loggedUserID = user[0].User_ID;
+                var userResults = dbContext.PlayerResults.Where(uR => uR.Results_ID == loggedUserID).ToList();
+
+                // PlayerResults object to add to Results_ID
+                var helperPlayerResult = new PlayerResults
+                {
+                    Results_ID = userResults[0].Results_ID,
+                    Weight = userResults[0].Weight,
+                    Height = userResults[0].Height,
+                    BenchPress = userResults[0].BenchPress,
+                    Squats = userResults[0].Squats,
+                    Deadlift = userResults[0].Deadlift,
+                    Run60 = userResults[0].Run60,
+                    Jump = userResults[0].Jump
+                };
 
                 var userHelper = new User
                 {
-                    User_ID = user[0].User_ID,
+                    User_ID = loggedUserID,
                     FirstName = user[0].FirstName,
                     LastName = user[0].LastName,
                     UserCategory = user[0].UserCategory,
                     Birthday = user[0].Birthday,
                     Login = user[0].Login,
                     Password = user[0].Password,
-                    Results_ID = user[0].Results_ID
-                    //Results_ID = new PlayerResults
-                    //{
-                    //    Results_ID = user[0].Results_ID.Results_ID,
-                    //    Weight = user[0].Results_ID.Weight,
-                    //    Height = user[0].Results_ID.Height,
-                    //    BenchPress = user[0].Results_ID.BenchPress,
-                    //    Squats = user[0].Results_ID.Squats,
-                    //    Deadlift = user[0].Results_ID.Deadlift,
-                    //    Run60 = user[0].Results_ID.Run60,
-                    //    Jump = user[0].Results_ID.Jump
-                    //}
+                    Results_ID = helperPlayerResult
                 };
-                LogedUser = userHelper;
+                    LogedUser = userHelper;
                 return true;
             }
             else
@@ -60,5 +64,7 @@ namespace TeamExerciseManagementApp.Models.DataBaseOperations
                 return false;
             }
         }
+
+         
     }
 }

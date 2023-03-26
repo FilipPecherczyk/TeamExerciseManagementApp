@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamExerciseManagementApp.Models.DataBaseOperations;
 
 namespace TeamExerciseManagementApp.BoardContentViews
 {
@@ -24,6 +25,11 @@ namespace TeamExerciseManagementApp.BoardContentViews
         public ResultsContentView()
         {
             InitializeComponent();
+            Chest_kg.Text = UserLogin.LogedUser.Results_ID.BenchPress.ToString();
+            Squat_kg.Text = UserLogin.LogedUser.Results_ID.Squats.ToString();
+            Deadlift_kg.Text = UserLogin.LogedUser.Results_ID.Deadlift.ToString();
+            Run_time.Text = UserLogin.LogedUser.Results_ID.Run60.ToString();
+            Jump_meters.Text = UserLogin.LogedUser.Results_ID.Jump.ToString();
         }
 
 

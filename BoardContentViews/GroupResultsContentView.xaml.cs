@@ -24,7 +24,7 @@ namespace TeamExerciseManagementApp.BoardContentViews
         public GroupResultsContentView()
         {
             InitializeComponent();
-            ListOfUsers.CreateListOfPlayers();
+            //ListOfUsers.CreateListOfPlayers();
         }
     }
 }
